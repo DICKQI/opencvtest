@@ -14,7 +14,7 @@ def access_pixels(image):
                 image[row, col, c] = 255 - pv
     cv.imshow("pixel_demo", image)
 def create_image():
-    img = np.zeros([400, 400, 3], np.uint8)
+    # img = np.zeros([400, 400, 3], np.uint8)
     # print(img)
     # img[:,:,0] = np.ones([400, 400]) * 255
     # cv.imshow("new image", img)
