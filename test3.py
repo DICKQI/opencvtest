@@ -13,7 +13,9 @@ def divide_demo(m1, m2):
 def multiply_demo(m1, m2):
     dst = cv.multiply(m1, m2)
     cv.imshow("multiply_demo", dst)
-
+def logic_demo(m1, m2):
+    dst = cv.bitwise_not(m1, m2)
+    cv.imshow("logic_demo", dst)
 def others(m1, m2):
     M1, dev1 = cv.meanStdDev(m1)
     M2, dev2 = cv.meanStdDev(m2)
@@ -38,11 +40,12 @@ if __name__ == '__main__':
         cv.imshow('image2', src2)
         print(src1.shape)
         print(src2.shape)
-        add_demo(src1, src2)
-        subtract_demo(src1, src2)
-        divide_demo(src1, src2)
-        multiply_demo(src1, src2)
-        others(src1, src2)
+        # add_demo(src1, src2)
+        # subtract_demo(src1, src2)
+        # divide_demo(src1, src2)
+        # multiply_demo(src1, src2)
+        # others(src1, src2)
+        logic_demo(src1, src2)
         cv.waitKey(0)
     except:
         pass

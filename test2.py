@@ -14,13 +14,11 @@ def extrace_object_demo():
         mask = cv.inRange(hsv, lowerb=lower_hsv, upperb=upper_hsv)
         time2 = cv.getTickCount()
         print((time2 - time1) / cv.getTickFrequency())
-        print(mask[100:200,100:100,])
         cv.imshow("video", frame) # 将帧显示出来
         cv.imshow("mask", mask)
         c = cv.waitKey(40)
         if c == 27:
             break
-
 
 def color_space_demo(image):
     gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
