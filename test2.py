@@ -14,6 +14,7 @@ def extrace_object_demo():
         mask = cv.inRange(hsv, lowerb=lower_hsv, upperb=upper_hsv)
         time2 = cv.getTickCount()
         print((time2 - time1) / cv.getTickFrequency())
+        print(mask[100:200,100:100,])
         cv.imshow("video", frame) # 将帧显示出来
         cv.imshow("mask", mask)
         c = cv.waitKey(40)
@@ -39,15 +40,15 @@ try:
     src = cv.imread('red.jpg')
     cv.namedWindow("input image", cv.WINDOW_AUTOSIZE)
     cv.imshow("input image", src)
-    # extrace_object_demo()
-    b, g, r = cv.split(src)
-    cv.imshow("blue", b)
-    cv.imshow("green", g)
-    cv.imshow("red", r)
-    src[:, 10:1000, 1] = 0
-    cv.imshow("change", src)
-    src = cv.merge([b, g, r])
-    cv.imshow("return", src)
+    extrace_object_demo()
+    # b, g, r = cv.split(src)
+    # cv.imshow("blue", b)
+    # cv.imshow("green", g)
+    # cv.imshow("red", r)
+    # src[:, 10:1000, 1] = 0
+    # cv.imshow("change", src)
+    # src = cv.merge([b, g, r])
+    # cv.imshow("return", src)
     cv.waitKey(0)
 except:
     pass
