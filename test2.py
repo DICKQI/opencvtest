@@ -14,8 +14,10 @@ def extrace_object_demo():
         mask = cv.inRange(hsv, lowerb=lower_hsv, upperb=upper_hsv)
         time2 = cv.getTickCount()
         print((time2 - time1) / cv.getTickFrequency())
+        dst = cv.bitwise_and(frame, frame, mask=mask)
         cv.imshow("video", frame) # 将帧显示出来
         cv.imshow("mask", mask)
+        cv.imshow("dst", dst) # 将原本的颜色显示
         c = cv.waitKey(40)
         if c == 27:
             break

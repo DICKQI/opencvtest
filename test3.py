@@ -14,8 +14,13 @@ def multiply_demo(m1, m2):
     dst = cv.multiply(m1, m2)
     cv.imshow("multiply_demo", dst)
 def logic_demo(m1, m2):
-    dst = cv.bitwise_not(m1, m2)
-    cv.imshow("logic_demo", dst)
+    '''逻辑运算（按位）'''
+    dst1 = cv.bitwise_and(m1, m2) # 与
+    dst2 = cv.bitwise_or(m1, m2) # 或
+    dst3 = cv.bitwise_not(m2) # 非 -- 取反
+    cv.imshow("and_demo", dst1)
+    cv.imshow("or_demo", dst2)
+    cv.imshow('not_demo', dst3)
 def others(m1, m2):
     M1, dev1 = cv.meanStdDev(m1)
     M2, dev2 = cv.meanStdDev(m2)
